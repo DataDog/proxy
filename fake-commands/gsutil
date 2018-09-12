@@ -1,0 +1,16 @@
+#!/bin/bash
+cmd="$1"
+shift
+
+case "$cmd" in
+cp)
+	# last positional parameter
+	# shellcheck disable=SC2124
+	dest="${@:$#:1}"
+	if ! [[ -d "$dest" ]]; then
+		mkdir -p "$dest"
+	fi
+	;;
+esac
+
+exec "$cmd" "$@"

@@ -9,8 +9,8 @@
 	{
 		"_comment": "",
 		"name": "ENVOY_SHA",
-		"repoName": "envoyproxy/envoy",
+		"repoName": "DataDog/envoy",
 		"file": "WORKSPACE",
-		"lastStableSHA": "f936fc60f488cfae07f5e5d20d7381f0f23482fe"
+		"lastStableSHA": "b536f649ab83dbeefa032fc03bfb083dd5e18b51"
 	}
 ]

@@ -41,21 +41,21 @@ ENVOY_SHA = "cba9f5e3544a6c00c2d8f4406f98f2d4dfad773a"
 
 ENVOY_SHA256 = "69eba169233d388d29e9afb6abd31e9200c491f308a09c851b5f18dd650725c7"
 
-LOCAL_ENVOY_PROJECT = "/PATH/TO/ENVOY"
+LOCAL_ENVOY_PROJECT = "../../../../envoy"
 
-http_archive(
-    name = "envoy",
-    sha256 = ENVOY_SHA256,
-    strip_prefix = "envoy-" + ENVOY_SHA,
-    url = "https://github.com/istio/envoy/archive/" + ENVOY_SHA + ".tar.gz",
-)
+# http_archive(
+#     name = "envoy",
+#     sha256 = ENVOY_SHA256,
+#     strip_prefix = "envoy-" + ENVOY_SHA,
+#     url = "https://github.com/istio/envoy/archive/" + ENVOY_SHA + ".tar.gz",
+# )
 
 # TODO(silentdai) Use bazel args to select envoy between local or http
 # Uncomment below and comment above http_archive to depends on local envoy.
-#local_repository(
-#     name = "envoy",
-#     path = LOCAL_ENVOY_PROJECT,
-#)
+local_repository(
+     name = "envoy",
+     path = LOCAL_ENVOY_PROJECT,
+)
 
 load("@envoy//bazel:api_repositories.bzl", "envoy_api_dependencies")
 
